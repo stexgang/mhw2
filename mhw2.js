@@ -1,9 +1,9 @@
 
 
-// Cambio immagine al passaggio del mouse
+
 const macImg = document.querySelector('.macc');
 const originalSrc = macImg.src;
-const hoverSrc = 'nuova-immagine.png'; // sostituiscilo con il path corretto
+const hoverSrc = 'nuova-immagine.png'; 
 
 macImg.addEventListener('mouseenter', () => {
     macImg.src = hoverSrc;
@@ -13,8 +13,8 @@ macImg.addEventListener('mouseleave', () => {
     macImg.src = originalSrc;
 });
 
-// Menu a tendina per l'icona Apple
-const appleIcon = document.querySelector('#logo'); // Assicurati che l'icona Apple abbia questa classe
+
+const appleIcon = document.querySelector('#logo');
 const dropdownMenu = document.createElement('div');
 dropdownMenu.classList.add('dropdown-menu', 'hidden');
 
@@ -27,7 +27,7 @@ registratiOption.textContent = 'Registrati';
 dropdownMenu.appendChild(registratiOption);
 
 document.body.appendChild(dropdownMenu);
-// Stile per il menu a tendina
+
 dropdownMenu.style.backgroundColor = '#f9f9f9';
 dropdownMenu.style.border = '1px solid #ccc';
 dropdownMenu.style.borderRadius = '8px';
@@ -39,7 +39,7 @@ dropdownMenu.style.fontSize = '14px';
 dropdownMenu.style.color = '#333';
 dropdownMenu.style.zIndex = '1000';
 
-// Stile per le opzioni del menu
+
 const menuOptions = dropdownMenu.querySelectorAll('div');
 menuOptions.forEach(option => {
     option.style.padding = '8px 12px';
@@ -60,14 +60,14 @@ appleIcon.addEventListener('click', () => {
     dropdownMenu.style.left = `${rect.left}px`;
 });
 
-// Nascondi il menu quando clicchi fuori
+
 document.addEventListener('click', (event) => {
     if (!appleIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
         dropdownMenu.classList.add('hidden');
     }
 });
-// Casella di ricerca per l'icona di ricerca
-const searchIcon = document.querySelector('#ricerca'); // Assicurati che l'icona di ricerca abbia questo ID
+
+const searchIcon = document.querySelector('#ricerca');
 const searchBox = document.createElement('div');
 searchBox.classList.add('search-box', 'hidden');
 
@@ -85,7 +85,7 @@ searchInput.style.outline = 'none';
 searchBox.appendChild(searchInput);
 document.body.appendChild(searchBox);
 
-// Stile per la casella di ricerca
+
 searchBox.style.backgroundColor = '#f9f9f9';
 searchBox.style.border = '1px solid #ccc';
 searchBox.style.borderRadius = '8px';
@@ -101,7 +101,7 @@ searchIcon.addEventListener('click', () => {
     searchBox.style.left = `${rect.left}px`;
 });
 
-// Nascondi la casella di ricerca quando clicchi fuori
+
 document.addEventListener('click', (event) => {
     if (!searchIcon.contains(event.target) && !searchBox.contains(event.target)) {
         searchBox.classList.add('hidden');
